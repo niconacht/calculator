@@ -1,22 +1,56 @@
 :root {
     --container-padding: 2%;
+    --main-color: #F87677;
+    --contrast-color: #FFFFFF;
+
+
 }
 * {
     box-sizing: border-box;
 }
 body {
-    width: 100%;
+    width: 100vw;
+    font-family:"Open Sans", sans-serif;
+    color: var(--contrast-color);
 
 }
 
+button {
+  background: none;
+	color: inherit;
+	border: none;
+  padding: 0;
+  margin: 2%;
+	cursor: pointer;
+	outline: inherit;
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 1.4em;
+}
+
+button:hover {
+
+  border-radius: 15px;
+  background-color: #f78a8a;
+}
+
+button:active {
+background-color: #f78a8a;
+color: var(--main-color);
+transform: translateY(4px);
+}
+
+
 .container {
+  background-color: var(--main-color);
     position: absolute;
-     margin: auto;
-     top: 0;
-     right: 0;
-     bottom: 0;
-     left: 0;
-    border: 2px solid black;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-style: : none;
+    box-shadow: 5px 9px 10px #d1c6c6;
     border-radius: 12px;
     width:  320px;
     height: 568px;
@@ -24,36 +58,60 @@ body {
 }
 
 .display {
-    width: 100%;
     height: calc(100% * 1/3);
-    border-bottom: 0.5px, solid, #333333;
+    border-bottom: 0.3px solid var(--contrast-color);
+    position: relative;
 }
 
-
-.keys-container{
-    height: calc(100% * 2/3);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto auto;
-    grid-template-areas:
-            "num num num op"
-            "num num num op"
-            "num num num op"
-            "dec num clear op";
+.disp-container {
+  padding: 5%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-align: right;
 }
 
-.numbers {
-    grid-area: num;
+#process{
+  font-weight: 300;
+  font-size: 1.1em;
+
 }
 
-.operator {
-    grid-area: op;
+#result{
+  font-size: 2.2em;
 }
 
-.all-clear {
-    grid-area: clear;
+.keys{
+  padding:10px 0 2% 0;
+  height: calc(100% * 2/3);
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1%;
+  justify-content: center;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
 }
 
-.decimal {
-    grid-area: dec;
+.equal {
+grid-column-start: 0;
+grid-column-end: span 4;
+
+
+}
+.equal:hover {
+
+
+}
+.equal:active {
+  background-color: var(--main-color);
+  color: var(--contrast-color);
+
+}
+
+@media only screen and (max-width: 600px){
+  .container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
 }

@@ -1,50 +1,51 @@
- <!DOCTYPE html>
- <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-     <title>TITLE</title>
-     <meta name="description" content="DESCRIPTION">
-    <link rel="stylesheet" href="styles.css">
+    <title>TITLE</title>
+    <!-- <meta name="description" content="DESCRIPTION"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+in the head of your doc
+   <link rel="stylesheet" href="styles.css">
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
 
- </head>
+</head>
+<body>
+ <div class= "container">
+   <div class="display">
+     <div class="disp-container">
+       <div id="process"></div>
+       <div id="result">0</div>
+     </div>
+   </div>
+   <div class="keys">
 
- <body>
-     <div class="container">
-         <div class="display">
-             <div class="calc">
-            </div>
-            <div class="result">
-            </div>
-         </div>
-        <div class="keys-container">
+     <button class="number" value="7">7</button>
+     <button class="number" value="8">8</button>
+     <button class="number" value="9">9</button>
+     <button class="operator calc" data-action="add" value="+">+</button>
 
-            <button type="button" class="numbers" id="7" value="7">7</button>
-            <button type="button" class="numbers" id="8" value="8">8</button>
-            <button type="button" class="numbers" id="9" value="9">9</button>
+     <button class="number" value="4">4</button>
+     <button class="number" value="5">5</button>
+     <button class="number" value="6">6</button>
+     <button class="operator calc" data-action="subtract" value="-">-</button>
 
-            <button type="button" class="numbers" id="4" value="4">4</button>
-            <button type="button" class="numbers" id="5" value="5">5</button>
-            <button type="button" class="numbers" id="6" value="6">6</button>
+     <button class="number" value="3">3</button>
+     <button class="number" value="2">2</button>
+     <button class="number" value="1">1</button>
+     <button class="operator calc" data-action="multiply"value="*">*</button>
 
-            <button type="button" class="numbers" id="1" value="1">1</button>
-            <button type="button" class="numbers" id="2" value="2">2</button>
-            <button type="button" class="numbers" id="3" value="3">3</button>
+     <button class="decimal" value=".">.</button>
+     <button class="number" value="0">0</button>
+     <button id="clear" value ="clear">AC</button>
+     <button class="operator calc" data-action="divide" value="/">/</button>
 
-            <button type="button" class="numbers" id="0" value="0">0</button>
-            <button type="button" class="all-clear" id="clear" value="all-clear">AC</button>
-            <button type="button" class="decimal" id="decimal" value=".">.</button>
+     <button class="operator equal" id="evaluate" data-action="calculate" value="="/>=</button>
 
-            <button type="button" class="operator" id="plus" value="+">+</button>
-            <button type="button" class="operator" id="minus" value="-">-</button>
-            <button type="button" class="operator" id=" multiply" value="*">×</button>
-            <button type="button" class="operator" id=" divide" value="/">÷</button>
-            <button type="button" class="equal-sign operator" value="=">=</button>
+   </div>
+ </div>
+<script src="script_own.js"></script>
+</body>
 
-        </div>
-    </div>
-     <script src="script.js"></script>
- </body>
-
-
- </html>
+</html>

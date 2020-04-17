@@ -1,53 +1,79 @@
-//basic calc operations
-function add (a,b) {
-  return a+b;
+var buttons = document.querySelectorAll("button").length;
+var valString = "";
+var largeDisp = document.getElementById("result");
+var smallDisp = document.getElementById("process");
+for (let i = 0; i < buttons; i++) {
+  document.querySelectorAll("button")[i].addEventListener("click", addValToString)
+}
+function addValToString(e){
+  const val = e.target.value;
+
+  if (val !== "=" && val !== "clear"){
+  valString+=val;
+  }
+
+  smallDisp.textContent = valString;
+
+  if (val === "=") {
+    let result = parse(valString);
+    smallDisp.textContent = "";
+    largeDisp.textContent= result;
+  }
+
+  if (val == "clear") {
+    valString = "";
+        smallDisp.textContent = "";
+        largeDisp.textContent = "0";
+  }
 }
 
-function subtract (a,b){
-  return a-b;
+//var reset = document.getElementById("clear").addEventListener("click", )
+
+
+
+function parse(str) {
+  return Function(`'use strict'; return (${str})`)()
 }
 
-function multiply (a,b){
-  return a*b;
-}
+// function resetDisp(e){
+//   if(e.target.id === "clear"){
+//     valString = "";
+//     smallDisp.textContent = "";
+//     largeDisp.textContent = "0";
+//   }
+// }
 
-function divide (a,b){
-  return a/b;
-}
 
-//choose mathematical operation depending on operator
-function operate(a,b, operator) {
-    if (operator ===plus) {
-        return add(a,b);
-    }
-    else if (operator === minus){
-        return subtract(a,b);
-    }
-    else if (operator ===mult) {
-        return multiply(a,b);
-    }
-    else if (operator ===divid){
-        return divide(a,b);
-    }
-}
 
-// //which operator has been pressed
-// let operator = function(){
-//
+
+// //basic calc operations
+// function add (a,b) {
+//   return a+b;
+// }
+// function subtract (a,b){
+//   return a-b;
 // }
 //
+// function multiply (a,b){
+//   return a*b;
+// }
 //
-// //mathematical operation depending on operator
-// switch (operator){
-//     case "+":
-//         add(a,b);
-//         break;
-//     case "-":
-//         subtract(a,b);
-//         break;
-//     case "*":
-//         multiply(a,b);
-//         break;
-//     case "/":
-//         divide(a,b);
+// function divide (a,b){
+//   return a/b;
+// }
+//
+// //choose mathematical operation depending on operator
+// function operate(a,b, operator) {
+//     if (operator ===plus) {
+//         return add(a,b);
+//     }
+//     else if (operator === minus){
+//         return subtract(a,b);
+//     }
+//     else if (operator ===mult) {
+//         return multiply(a,b);
+//     }
+//     else if (operator ===divide){
+//         return divide(a,b);
+//     }
 // }
