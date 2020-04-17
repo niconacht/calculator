@@ -1,0 +1,53 @@
+:root {
+    --container-padding: 2%;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+
+}
+
+.container {
+    position: absolute;
+     margin: auto;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+    border: 2px solid black;
+    border-radius: 12px;
+    width:  320px;
+    height: 568px;
+    padding: var(--container-padding);
+}
+
+.display {
+    width: 100%;
+    height: calc(100% * 1/3);
+    border-bottom: 0.5px, solid, #333333;
+}
+
+
+.keys-container{
+    height: calc(100% * 2/3);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
+
+.numbers {
+
+}
+
+.operator {
+}
+
+.all-clear {
+
+}
+
+.decimal {
+
+}
