@@ -29,5 +29,6 @@ function addValToString(e){
 
 //Create a function frojm string with global Function constructor, quick and dirty evaluation of the calculation
 function parse(str) {
-  return Function(`'use strict'; return (${str})`)()
+  let result = Function(`'use strict'; return (${str})`)();
+   return result.toFixed(1);
 }
